@@ -8,4 +8,16 @@ public class Data_Node {
 		this.measurement = measurement;
 	}
 	//todo: Make getters and setters
+	public double getX(){
+		return x;
+	}
+	public double getY(){
+		return y;
+	}
+	public double getTime(){
+		return time;
+	}
+	public double getMeasurement(){
+		return measurement;
+	}
 }
