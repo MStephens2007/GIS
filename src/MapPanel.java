@@ -27,16 +27,6 @@ public class MapPanel extends JPanel{
 			g2.drawChars(txt, 0, 1,(int)(temp.getX()*-10), (int)(temp.getY()*10));
 			System.out.println("Drawing at " + temp.getX()*-10 + ", " + temp.getY()*10);
 		}
-		
-		/*if(counter < db.getSize()){
-			Data_Node temp = db.getNode(counter);
-			char[] txt = {'*'};
-			g.drawChars(txt, 0, 1,(int)temp.getX()*-10, (int)temp.getY()*10);
-		}
-		counter++;
-		if(counter % 1000 == 0){
-			System.out.println("finished " + counter);
-		}*/
 			
 	}
 	

@@ -36,20 +36,7 @@ public class Database {
 						System.out.println(nodes.size() + ": list size");
 						System.out.println(x + ", " + y + ", " + ", " + time + ", " + meas);
 					}
-			/*else if(type == "STATE"){
-				//if(src.next() == "1"){
-					//System.out.println("Waste");
-				//}
-				String x = src.next();
-				String y = src.next();
-				State_Node temp = new State_Node(x, y);
-				nodes.add(temp);
-				if(DEBUGTOGGLE){
-					counter++;
-					System.out.println(nodes.size() + ": list size");
-					System.out.println(x + ", " + y + ", ");
-				}
-			}*/
+			
 			}
 		} catch (IOException x){
 			System.err.format("IOException: %s%n", x);

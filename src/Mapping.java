@@ -15,14 +15,14 @@ public class Mapping {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Path file = FileSystems.getDefault().getPath("pm25_2009_measured.txt");
-		Gis_Data = new Database(file, "GIS");
-		//Path file2 = FileSystems.getDefault().getPath("st99_d00.dat");
-		//State_Data = new Database(file2, "STATE");
+		//Path file = FileSystems.getDefault().getPath("pm25_2009_measured.txt");
+		//Gis_Data = new Database(file, "GIS");
+		Path file = FileSystems.getDefault().getPath("st99_d00.dat");
+		State_Database temp = new State_Database(file);
 		System.out.println(Gis_Data.toString());
 		makeGUI();
 	}
-	/*public static void testRange(Database db){
+	public static void testRange(Database db){
 		double max_x = db.getNode(0).getX();
 		double min_x = max_x;
 		double max_y = db.getNode(0).getY();
@@ -43,7 +43,7 @@ public class Mapping {
 		
 		System.out.println("Max X value is "+ max_x + ", min value is "+ min_x + ". Difference is " + (max_x - min_x));
 		System.out.println("Max Y value is "+ max_y + ", min value is "+ min_y + ". Difference is " + (max_y - min_y));
-	}*/
+	}
 	public static void makeGUI(){
 		frame = new JFrame();
 		frame.setSize(1900,1200);
@@ -51,6 +51,7 @@ public class Mapping {
 		frame.setVisible(true);
 		p = new MapPanel(Gis_Data);
 		frame.add(p);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 	}
 	
