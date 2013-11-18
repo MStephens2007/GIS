@@ -6,11 +6,14 @@ import javax.swing.*;
 
 public class MapPanel extends JPanel{
 	Database db;
+	State_Database sdb;
 	int counter = 0;
 	JButton jbtNextDay;
-	
-	public MapPanel(Database db){
-		this.db = db;
+	Boolean borderDraw = true;
+	Boolean dataDraw = false;
+	public MapPanel(Database gisData, State_Database stateData){
+		this.db = gisData;
+		this.sdb = stateData;
 		
 	}
 	public void paintComponent(Graphics g){
@@ -19,13 +22,18 @@ public class MapPanel extends JPanel{
 		
 		int getHeight = this.getHeight();
 		int getWidth = this.getWidth();
-		g2.drawLine(0, getHeight/2, getWidth, getHeight/2);
-		g2.drawLine(getWidth/2, 0, getWidth/2, getHeight);
-		for(int i = 1; i < db.getSize(); i++){
+		if(dataDraw){
+		for(int i = 0; i < db.getSize(); i++){
 			Data_Node temp = db.getNode(i);
 			char[] txt = {'*'};
 			g2.drawChars(txt, 0, 1,(int)(temp.getX()*-10), (int)(temp.getY()*10));
 			System.out.println("Drawing at " + temp.getX()*-10 + ", " + temp.getY()*10);
+		}
+		}
+		if(borderDraw){
+			//for(int i = 0; i < 100000; i++){
+				System.out.println(sdb.toString());
+			//}
 		}
 			
 	}

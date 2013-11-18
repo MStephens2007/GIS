@@ -11,15 +11,16 @@ public class Mapping {
 	static JFrame frame;
 	static MapPanel p;
 	static Database Gis_Data;
-	static Database State_Data;
+	static State_Database State_Data;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		//Path file = FileSystems.getDefault().getPath("pm25_2009_measured.txt");
-		//Gis_Data = new Database(file, "GIS");
-		Path file = FileSystems.getDefault().getPath("st99_d00.dat");
-		State_Database temp = new State_Database(file);
-		System.out.println(Gis_Data.toString());
+		//Path measurements = FileSystems.getDefault().getPath("pm25_2009_measured.txt");
+		//Gis_Data = new Database(measurements, "GIS");
+		Path boundaries = FileSystems.getDefault().getPath("st99_d00.dat");
+		State_Database State_Data = new State_Database(boundaries);
+		//System.out.println(Gis_Data.toString());
+		//System.out.println(State_Data.toString());
 		makeGUI();
 	}
 	public static void testRange(Database db){
@@ -49,7 +50,7 @@ public class Mapping {
 		frame.setSize(1900,1200);
 		frame.setTitle("Map");
 		frame.setVisible(true);
-		p = new MapPanel(Gis_Data);
+		p = new MapPanel(Gis_Data,State_Data);
 		frame.add(p);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
