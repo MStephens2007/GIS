@@ -9,6 +9,24 @@ public class IDW {
 	 * --------------------------------------------------------
 	 * THE FIRST VALUE OR X0,Y0,T0 IS THE PREDICTED VALUE AT LOCATION (
 	 */
+	static double p;
+	static double x;
+	static double y;
+	static double t;
+	static int n;
+	static double answer;
+	public IDW(double x, double y, double t, int n, double p){
+		this.p = p;
+		this.x = x;
+		this.y = y;
+		this.t = t;
+		this.p = p;
+		
+	}
+	public static double getIDW(){
+		answer = W(x,y,t,n,p);
+		return answer;
+	}
 
 	private static double lamda(double p, double x, double y, double t,
 			Data_Node node, Data_Node[] nodes) {

@@ -14,7 +14,7 @@ public class State_Database {
 	List<State_Node> nodes = new ArrayList<State_Node>();
 	Pattern coordinatePat = Pattern.compile("[0][.][0-9]*[eE][+-][0-9]*");
 	int[] startSet = new int[50];
-	private boolean DEBUGTOGGLE = true;
+	private boolean DEBUGTOGGLE = false;
 	int counter = 0;
 	public State_Database(Path file){
 		populateSet();

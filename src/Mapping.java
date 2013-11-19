@@ -12,7 +12,7 @@ public class Mapping {
 	static MapPanel p;
 	static Database Gis_Data;
 	static State_Database State_Data;
-	public static void main(String[] args) {
+	public Mapping(boolean gui){
 		// TODO Auto-generated method stub
 		
 		//Path measurements = FileSystems.getDefault().getPath("pm25_2009_measured.txt");
@@ -21,7 +21,12 @@ public class Mapping {
 		State_Database State_Data = new State_Database(boundaries);
 		//System.out.println(Gis_Data.toString());
 		//System.out.println(State_Data.toString());
-		makeGUI();
+		if(gui)makeGUI();
+	}
+	public void toggle(boolean gui){
+		if(gui){
+			makeGUI();
+		}
 	}
 	public static void testRange(Database db){
 		double max_x = db.getNode(0).getX();
